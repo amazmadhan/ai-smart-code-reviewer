@@ -44,4 +44,7 @@ Body -> form-data:
 Key -> file File (dropdown)
 Value -> upload file
 
+frontend / UI hit:
+http://localhost:5173/
+
 postman collection link - https://.postman.co/workspace/My-Workspace~1e814d42-41de-47ff-81e3-cdef2629abae/request/15456597-c5bf405c-d9bd-450a-969d-159a77644daf?action=share&creator=15456597&ctx=documentation
