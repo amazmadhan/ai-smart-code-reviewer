@@ -1,0 +1,84 @@
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>3.2.5</version>
+    <relativePath/> <!-- lookup parent from the repository -->
+  </parent>
+
+  <groupId>ai.smart</groupId>
+  <artifactId>codereview</artifactId>
+  <version>0.0.2</version>
+  <packaging>war</packaging>
+
+  <properties>
+    <java.version>17</java.version>
+  </properties>
+
+  <dependencies>
+    <!-- Spring Boot Web -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+
+    <!-- JavaParser for AST analysis -->
+    <dependency>
+        <groupId>com.github.javaparser</groupId>
+        <artifactId>javaparser-core</artifactId>
+        <version>3.25.8</version>
+    </dependency>
+
+    <!-- OpenAI Client -->
+    <dependency>
+      <groupId>com.theokanning.openai-gpt3-java</groupId>
+      <artifactId>client</artifactId>
+      <version>0.18.2</version>
+    </dependency>
+
+    <!-- Lombok (optional, but handy for @Data, @Builder, etc.) -->
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <optional>true</optional>
+    </dependency>
+
+    <!-- Logging (Spring Boot already brings logback, but keeping these explicit is fine) -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>2.0.7</version>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>1.4.7</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <finalName>codereview</finalName>
+    <plugins>
+      <!-- Spring Boot Plugin -->
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+
+      <!-- WAR Packaging -->
+      <plugin>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.3.2</version>
+        <configuration>
+          <failOnMissingWebXml>false</failOnMissingWebXml>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
